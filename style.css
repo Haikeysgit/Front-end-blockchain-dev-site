@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #10b981 0%, #3b82f6 100%);
+    z-index: 9999;
+    transition: width 0.1s ease;
+}
+
+/* Loading State */
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.page-loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(16, 185, 129, 0.3);
+    border-top: 3px solid #10b981;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+    position: relative;
+}
+
+section {
+    position: relative;
+    z-index: 1;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.code-animation {
+    overflow: hidden;
+    white-space: pre-wrap;
+    animation: typewriter 3s steps(40) infinite;
+}
+
+@keyframes typewriter {
+
+    0%,
+    100% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.float-animation {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Dark mode styles */
+.dark {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.light {
+    background-color: #ffffff;
+    color: #0a0a0a;
+}
+
+/* Light mode card backgrounds */
+.light .bg-gray-900 {
+    background-color: #f3f4f6 !important;
+    color: #1f2937 !important;
+}
+
+/* Light mode text colors */
+.light .text-gray-400 {
+    color: #4b5563 !important;
+}
+
+.light .text-gray-500 {
+    color: #6b7280 !important;
+}
+
+/* Light mode borders */
+.light .border-gray-800 {
+    border-color: #e5e7eb !important;
+}
+
+/* Light mode card hover states */
+.light .bg-gray-900:hover {
+    background-color: #e5e7eb !important;
+}
+
+/* Light mode social icons */
+.light .bg-gray-800 {
+    background-color: #1f2937 !important;
+    color: #ffffff !important;
+}
+
+.light .bg-gray-800:hover {
+    background-color: #374151 !important;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.back-to-top:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+}
+
+/* Card 3D Tilt Effect */
+.card-tilt {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+.card-tilt:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) scale(1.02);
+}
+
+/* Icon Glow Animation */
+.icon-glow:hover svg {
+    filter: drop-shadow(0 0 8px currentColor);
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+/* Hero Fade In */
+.fade-in {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.fade-in-delay-1 {
+    animation-delay: 0.2s;
+}
+
+.fade-in-delay-2 {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stats Counter */
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Animated Gradient Mesh Background - Full Page */
+.gradient-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.gradient-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    animation: blob-float 20s ease-in-out infinite;
+}
+
+.blob-1 {
+    width: 400px;
+    height: 400px;
+    top: 10%;
+    left: 10%;
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    right: 5%;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    animation-delay: 5s;
+}
+
+.blob-3 {
+    width: 350px;
+    height: 350px;
+    bottom: 15%;
+    left: 30%;
+    background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+    animation-delay: 10s;
+}
+
+.blob-4 {
+    width: 450px;
+    height: 450px;
+    top: 30%;
+    left: 45%;
+    background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+    animation-delay: 15s;
+}
+
+@keyframes blob-float {
+
+    0%,
+    100% {
+        transform: translate(0px, 0px) scale(1);
+    }
+
+    25% {
+        transform: translate(20px, -40px) scale(1.05);
+    }
+
+    50% {
+        transform: translate(-30px, 50px) scale(0.95);
+    }
+
+    75% {
+        transform: translate(30px, -20px) scale(1.1);
+    }
+}
+
+/* FAQ Dropdown Section */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: rgba(17, 24, 39, 0.5);
+    border: 1px solid rgba(75, 85, 99, 0.3);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.faq-question {
+    padding: 20px 24px;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.faq-icon {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+}
+
+.nested-faq-icon {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 12px;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+}
+
+/* FAQ Interactions - Simple Hover (Original Behavior) - Desktop Only */
+@media (hover: hover) {
+    .faq-item:hover {
+        border-color: #10b981;
+        background: rgba(17, 24, 39, 0.8);
+    }
+
+    .faq-item:hover .faq-question {
+        color: #10b981;
+    }
+
+    .faq-item:hover .faq-icon {
+        transform: rotate(180deg);
+    }
+
+    .faq-item:hover .faq-answer {
+        max-height: 2000px;
+        padding: 0 24px 20px 24px;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    padding: 0 24px;
+    color: #9ca3af;
+    line-height: 1.7;
+    text-align: justify;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Nested FAQ Dropdowns */
+.nested-faq-container {
+    margin-top: 16px;
+    padding-left: 0;
+}
+
+.nested-faq-item {
+    background: rgba(31, 41, 55, 0.4);
+    border: 1px solid rgba(75, 85, 99, 0.2);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nested-faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px 16px;
+    font-weight: 600;
+    /* Keeping the bold fix */
+    color: #9ca3af;
+    transition: color 0.3s ease;
+}
+
+/* Nested FAQ Interactions - Simple Hover (Original Behavior) - Desktop Only */
+@media (hover: hover) {
+    .nested-faq-item:hover {
+        border-color: #3b82f6;
+        background: rgba(31, 41, 55, 0.7);
+    }
+
+    .nested-faq-item:hover .nested-faq-question {
+        color: #3b82f6;
+    }
+
+    .nested-faq-item:hover .nested-faq-icon {
+        transform: rotate(180deg);
+    }
+
+
+    .nested-faq-item:hover .nested-faq-answer {
+        max-height: 400px;
+        padding: 0 16px 12px 16px;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.nested-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    padding: 0 16px;
+    color: #9ca3af;
+    line-height: 1.6;
+    font-size: 14px;
+    text-align: justify;
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+
+.typing-text {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid #10b981;
+    white-space: nowrap;
+    animation: typing 4s steps(40) infinite, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+
+    0%,
+    100% {
+        width: 0;
+    }
+
+    50% {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}

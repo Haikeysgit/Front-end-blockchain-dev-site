@@ -1,0 +1,149 @@
+/* Mobile Optimization & Responsive Styles */
+
+/* 1. Layout & Spacing Fixes */
+/* Add breathing room to the main container on smaller screens */
+@media (max-width: 768px) {
+
+    .max-w-6xl,
+    .max-w-4xl,
+    .max-w-5xl {
+        padding-left: 6px !important;
+        /* Heavily reduced padding */
+        padding-right: 6px !important;
+        width: 100% !important;
+        box-sizing: border-box;
+        /* Ensure padding doesn't increase width */
+    }
+
+    /* Ensure sections don't overflow */
+    section {
+        overflow-x: hidden;
+    }
+
+    /* Adjust font sizes for mobile if needed */
+    h1 {
+        font-size: 3rem !important;
+        /* Smaller hero text */
+        line-height: 1.1 !important;
+    }
+
+    h2 {
+        font-size: 2.5rem !important;
+    }
+}
+
+/* 2. YouTube Video Fix */
+/* Ensure the video container maintains aspect ratio and fits the screen */
+.relative.rounded-xl.overflow-hidden.shadow-2xl {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
+    background: #000;
+    /* Fallback background */
+}
+
+.relative.rounded-xl.overflow-hidden.shadow-2xl iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 10;
+    /* Ensure video sits on top */
+}
+
+/* 3. Touch Interactions for FAQ (The "Active" Class) */
+/* These rules mirror the :hover rules in style.css but allow for click/tap */
+
+/* Main FAQ Active State */
+.faq-item.active {
+    border-color: #10b981;
+    background: rgba(17, 24, 39, 0.8);
+}
+
+.faq-item.active .faq-question {
+    color: #10b981;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 2000px;
+    padding: 0 24px 20px 24px;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Nested FAQ Active State */
+.nested-faq-item.active {
+    border-color: #3b82f6;
+    background: rgba(31, 41, 55, 0.7);
+}
+
+.nested-faq-item.active .nested-faq-question {
+    color: #3b82f6;
+}
+
+.nested-faq-item.active .nested-faq-icon {
+    transform: rotate(180deg);
+}
+
+.nested-faq-item.active .nested-faq-answer {
+    max-height: 400px;
+    padding: 0 16px 12px 16px;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 4. Text Alignment Fixes for Mobile */
+@media (max-width: 768px) {
+    /* Force left alignment for better readability on long text */
+    .faq-answer,
+    .nested-faq-answer,
+    .faq-question,
+    /* Added to force left alignment */
+    .max-w-4xl p,
+    /* YouTube section description */
+    .max-w-5xl .text-gray-400,
+    /* Patrick Collins description */
+    .text-center.md\:text-left p
+
+    /* Haikeys bio */
+        {
+        text-align: left !important;
+    }
+
+    /* Center Alignments (Reverting specific sections to middle) */
+    .max-w-6xl .grid .text-center,
+    /* Learn from Best grid items */
+    .card-tilt h4,
+    /* Card titles */
+    .card-tilt svg
+
+    /* Card icons */
+        {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Haikeys Name/Image Section Wrapper - Center this, but keep text left */
+    .flex.flex-col.md\:flex-row.items-center {
+        align-items: center !important;
+        /* Keeps image centered */
+    }
+
+    /* Specific fix for "Learn from the Best" header */
+    h2.text-5xl.font-bold.mb-8 {
+        text-align: center !important;
+    }
+
+    /* Exception: Keep main Hero title centered if preferred, or left too */
+    .min-h-screen .text-center {
+        text-align: center !important;
+    }
+}

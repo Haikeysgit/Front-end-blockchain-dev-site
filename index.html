@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Development in 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+</head>
+
+<body class="dark theme-transition">
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Animated Gradient Background - Full Page -->
+    <div class="gradient-background">
+        <div class="gradient-blob blob-1"></div>
+        <div class="gradient-blob blob-2"></div>
+        <div class="gradient-blob blob-3"></div>
+        <div class="gradient-blob blob-4"></div>
+    </div>
+
+    <!-- Theme Toggle (Floating) -->
+    <button id="themeToggle"
+        class="fixed top-6 right-6 z-50 p-4 rounded-full bg-gray-800 hover:bg-gray-700 transition shadow-lg">
+        <svg id="sunIcon" class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                clip-rule="evenodd"></path>
+        </svg>
+        <svg id="moonIcon" class="w-6 h-6 text-gray-800 hidden" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+    </button>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-6 py-20 relative">
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <div class="float-animation mb-8 fade-in">
+                <h1 class="text-6xl md:text-8xl font-bold mb-6">
+                    Blockchain Development
+                    <span class="gradient-text block mt-2">in 2026</span>
+                </h1>
+            </div>
+            <p class="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto fade-in fade-in-delay-1">
+                The future is built by problem solvers who see beyond the code.
+            </p>
+
+            <!-- FAQ Dropdown Section -->
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is Blockchain?</span>
+                        <svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        Blockchain is a decentralized digital system for recording transactions and data in a
+                        transparent, secure, and tamper-resistant way. Instead of being stored on a single central
+                        server, information is distributed across a network of computers called nodes, where each
+                        participant holds a copy of the same ledger. Transactions are grouped into blocks, verified
+                        through cryptographic and consensus mechanisms, and then permanently linked to previous blocks,
+                        forming an unbreakable chain. Once data is recorded on a blockchain, it cannot be altered
+                        without the agreement of the network, which creates trust without relying on intermediaries.
+                        This structure allows people and systems that do not know or trust each other to transact
+                        securely.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is Blockchain Development?</span>
+                        <svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        Blockchain development is the process of designing, building, and maintaining applications and
+                        systems that operate on blockchain networks. It involves writing on-chain logic, building
+                        off-chain systems that interact with the blockchain, and ensuring security, scalability, and
+                        reliability. Blockchain developers create decentralized applications where rules are enforced by
+                        code rather than by institutions, enabling trustless, transparent, and automated systems.
+
+                        <!-- Nested FAQ Items -->
+                        <div class="nested-faq-container">
+                            <div class="nested-faq-item">
+                                <div class="nested-faq-question">
+                                    <span>Smart Contracts</span>
+                                    <svg class="nested-faq-icon" width="16" height="16" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                                <div class="nested-faq-answer">
+                                    Smart contracts are self-executing programs deployed on a blockchain that
+                                    automatically enforce agreements once predefined conditions are met. They remove the
+                                    need for intermediaries by embedding rules directly into code, ensuring that
+                                    outcomes are predictable and verifiable. Smart contracts are immutable once
+                                    deployed, meaning developers must write precise and well-tested logic. They form the
+                                    backbone of most blockchain applications, including DeFi platforms, NFTs, DAOs, and
+                                    decentralized marketplaces.
+                                </div>
+                            </div>
+
+                            <div class="nested-faq-item">
+                                <div class="nested-faq-question">
+                                    <span>Blockchain Security</span>
+                                    <svg class="nested-faq-icon" width="16" height="16" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                                <div class="nested-faq-answer">
+                                    Blockchain security focuses on protecting blockchain systems, smart contracts, and
+                                    user assets from attacks and failures. Because blockchain transactions are
+                                    irreversible, security mistakes can lead to permanent loss of funds. Developers must
+                                    understand cryptography, wallet security, access control, common attack vectors, and
+                                    secure coding practices. Security also includes testing, audits, and designing
+                                    systems that remain safe even in hostile, adversarial environments.
+                                </div>
+                            </div>
+
+                            <div class="nested-faq-item">
+                                <div class="nested-faq-question">
+                                    <span>Decentralized Finance</span>
+                                    <svg class="nested-faq-icon" width="16" height="16" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                                <div class="nested-faq-answer">
+                                    Decentralized finance, known as DeFi, refers to financial applications built on
+                                    blockchains that operate without traditional intermediaries like banks. Through
+                                    smart contracts, DeFi enables lending, borrowing, trading, staking, and asset
+                                    management in a permissionless and transparent manner. These systems are open to
+                                    anyone and run continuously on the blockchain. DeFi development requires both
+                                    technical expertise and a strong understanding of financial concepts and risk.
+                                </div>
+                            </div>
+
+                            <div class="nested-faq-item">
+                                <div class="nested-faq-question">
+                                    <span>Decentralized Applications and Infrastructure</span>
+                                    <svg class="nested-faq-icon" width="16" height="16" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                                <div class="nested-faq-answer">
+                                    Another important area of blockchain development is decentralized applications and
+                                    infrastructure. This includes building wallets, blockchain nodes, indexing services,
+                                    cross-chain bridges, governance systems, and scalability solutions. These components
+                                    support the broader ecosystem and ensure that blockchain networks remain usable,
+                                    efficient, and accessible to real-world users.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Who is a Blockchain Developer?</span>
+                        <svg class="faq-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        A blockchain developer is a software professional who designs, builds, and secures applications
+                        and systems that run on blockchain networks. Before writing code, they must understand core
+                        blockchain theory such as distributed systems, cryptography, consensus mechanisms, and how trust
+                        is established in decentralized environments. They then apply this knowledge using programming
+                        languages like Solidity for smart contracts, Rust for high-performance blockchains, and Python
+                        or JavaScript for tooling, backends, and user interfaces. Blockchain developers may be
+                        full-stack, handling smart contracts, backend logic, and frontend integration, or specialized,
+                        focusing on areas like smart contract development, security, infrastructure, or protocol design.
+                        Their work ensures that decentralized systems are reliable, secure, and usable in real-world
+                        applications.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Where to Start Your Career in Blockchain Development?</span>
+                        <svg class="faq-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        Cyfrin Updraft offers comprehensive courses structured to guide both beginners and professionals
+                        through blockchain development. From foundational concepts to advanced security practices, the
+                        platform provides a clear learning path designed by industry experts. Whether you're taking your
+                        first steps or deepening your expertise, Cyfrin Updraft equips you with the skills needed for a
+                        successful career in blockchain.
+
+                        <div class="text-center mt-6">
+                            <a href="https://profiles.cyfrin.io/updraft/login" target="_blank"
+                                class="inline-block bg-green-500 hover:bg-green-600 text-black font-bold px-6 py-3 rounded-full text-sm transition transform hover:scale-105">
+                                Start Learning on Cyfrin Updraft
+                                <svg class="inline-block w-4 h-4 ml-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Why Blockchain Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16">
+                Why <span class="gradient-text">Blockchain Development</span> in 2026?
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div
+                    class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-green-500 transition card-tilt icon-glow">
+                    <svg class="w-12 h-12 text-green-500 mb-4" width="48" height="48" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                        </path>
+                    </svg>
+                    <h3 class="text-2xl font-bold mb-4">Critical Thinking</h3>
+                    <p class="text-gray-400">Blockchain development trains your mind to think in systems, solve complex
+                        problems, and build resilient architectures that millions can trust.</p>
+                </div>
+
+                <div
+                    class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-blue-500 transition card-tilt icon-glow">
+                    <svg class="w-12 h-12 text-blue-500 mb-4" width="48" height="48" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z">
+                        </path>
+                    </svg>
+                    <h3 class="text-2xl font-bold mb-4">Problem Solving</h3>
+                    <p class="text-gray-400">Every smart contract is a puzzle. Every DeFi protocol is a solution.</p>
+                </div>
+
+                <div
+                    class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-purple-500 transition card-tilt icon-glow">
+                    <svg class="w-12 h-12 text-purple-500 mb-4" width="48" height="48" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    <h3 class="text-2xl font-bold mb-4">Still Early</h3>
+                    <p class="text-gray-400">2026 is still early. While others wait, you're learning the skills that
+                        will define the next decade of technology and finance.</p>
+                </div>
+
+                <div
+                    class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-yellow-500 transition card-tilt icon-glow">
+                    <svg class="w-12 h-12 text-yellow-500 mb-4" width="48" height="48" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                        </path>
+                    </svg>
+                    <h3 class="text-2xl font-bold mb-4">Competitive Edge</h3>
+                    <p class="text-gray-400">Blockchain developers are among the highest-paid in tech, with competitive
+                        salaries and increasing demand. Position yourself in a career that values innovation and
+                        expertise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cyfrin Introduction -->
+    <section class="py-20 px-6 bg-gradient-to-b from-transparent via-green-950/10 to-transparent">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-5xl font-bold mb-8">Learn from the <span class="gradient-text">Best</span></h2>
+            <p class="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
+                Cyfrin Updraft is a free, comprehensive blockchain development platform trusted by thousands of
+                developers worldwide. From smart contract basics to advanced security auditing.
+            </p>
+
+            <div class="grid md:grid-cols-4 gap-6 mb-12">
+                <div class="bg-gray-900 p-6 rounded-lg border border-gray-800 card-tilt icon-glow">
+                    <svg class="w-8 h-8 text-green-500 mb-2 mx-auto" width="32" height="32" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                    </svg>
+                    <h4 class="font-bold text-xl">Smart Contracts</h4>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg border border-gray-800 card-tilt icon-glow">
+                    <svg class="w-8 h-8 text-blue-500 mb-2 mx-auto" width="32" height="32" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                        </path>
+                    </svg>
+                    <h4 class="font-bold text-xl">Security</h4>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg border border-gray-800 card-tilt icon-glow">
+                    <svg class="w-8 h-8 text-purple-500 mb-2 mx-auto" width="32" height="32" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                    </svg>
+                    <h4 class="font-bold text-xl">DeFi</h4>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg border border-gray-800 card-tilt icon-glow">
+                    <svg class="w-8 h-8 text-yellow-500 mb-2 mx-auto" width="32" height="32" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                        </path>
+                    </svg>
+                    <h4 class="font-bold text-xl">Community</h4>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://profiles.cyfrin.io/updraft/login" target="_blank"
+                    class="bg-green-500 hover:bg-green-600 text-black font-bold px-8 py-4 rounded-full transition transform hover:scale-105">
+                    Explore Cyfrin Updraft
+                    <svg class="inline-block w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                </a>
+                <a href="https://x.com/CyfrinUpdraft" target="_blank"
+                    class="bg-gray-800 hover:bg-gray-700 text-white font-bold px-8 py-4 rounded-full transition transform hover:scale-105">
+                    <svg class="inline-block w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                    Follow on X
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Course Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-6">Explore Cyfrin Updraft's Course on YouTube</h2>
+            <p class="text-gray-400 text-center mb-12">Watch the complete Blockchain Development course. 32 hours of
+                comprehensive training, completely free.</p>
+
+            <div class="relative rounded-xl overflow-hidden shadow-2xl">
+                <iframe width="100%" height="480" src="https://www.youtube.com/embed/gyMwXuJrbJQ?rel=0"
+                    title="Cyfrin Updraft Blockchain Development Course" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Patrick Collins Social Proof -->
+    <section class="py-12 px-6 bg-gradient-to-b from-transparent via-blue-950/10 to-transparent">
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-gray-900 rounded-xl p-10 border border-gray-800 card-tilt">
+                <h3 class="text-3xl font-bold mb-4">Learn from Industry Leaders</h3>
+                <p class="text-xl text-green-500 font-semibold mb-2">Patrick Collins</p>
+                <p class="text-gray-400 mb-4 leading-relaxed">
+                    Avid Smart Contract/Blockchain Software Engineer, Web3 Developer Advocate & Educator, and Smart
+                    Contract Auditor. Patrick has taught thousands of developers and built a reputation as one of the
+                    most trusted voices in blockchain education.
+                </p>
+                <div class="flex space-x-4 mb-6">
+                    <a href="https://x.com/PatrickAlphaC" target="_blank"
+                        class="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition transform hover:scale-110"
+                        title="Twitter/X">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/PatrickAlphaC" target="_blank"
+                        class="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition transform hover:scale-110"
+                        title="GitHub">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+                </div>
+                <p class="text-gray-500 text-sm italic">...alongside a team of seasoned blockchain professionals and
+                    security experts</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Haikeys (Footer) -->
+    <section class="py-12 px-6 border-t border-gray-800 bg-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <!-- Haikeys Info Section -->
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
+                <img src="https://i.imgur.com/9GGhf5J.jpg" alt="Haikeys"
+                    class="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-green-500 object-cover shadow-xl"
+                    crossorigin="anonymous">
+                <div class="text-center md:text-left">
+                    <h3 class="text-3xl font-bold mb-3">Haikeys</h3>
+                    <p class="text-gray-400 text-lg mb-4">Frontend & Smart Contract Developer<br>Student of Cyfrin |
+                        Building the Future</p>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <a href="https://x.com/Haikeystweett" target="_blank"
+                            class="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition transform hover:scale-110"
+                            title="Twitter/X">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a href="https://github.com/Haikeysgit" target="_blank"
+                            class="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition transform hover:scale-110"
+                            title="GitHub">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/imisioluwa-obaseki-537298318" target="_blank"
+                            class="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition transform hover:scale-110"
+                            title="LinkedIn">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Credit -->
+            <div class="text-center pt-6 border-t border-gray-800">
+                <p class="text-gray-500 text-sm font-semibold pb-4">Designed and Developed by Haikeys</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
